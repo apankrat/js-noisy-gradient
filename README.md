@@ -1,5 +1,5 @@
 # js-noisy-gradient
-Small and fast lib for smoothing visible banding in linear-gradient backgrounds.
+Small and very fast single-function "lib" for smoothing visible banding in linear-gradient backgrounds.
 
 ## Intro ##
 
