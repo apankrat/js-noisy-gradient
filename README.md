@@ -83,8 +83,9 @@ Here it's done with WebGL, which is probably one of more esoteric
 uses of this lovely framework.
 
 In fact, this is probably what makes the whole thing notable.
-If you ever wondered how to apply WebGL in a purely aesthetic
-capacity, this is *the* example of that.
+
+If you ever wondered how to apply WebGL in a purely *aesthetic*
+capacity, this is **the** example of that.
 
 ### 2D canvas ###
 
@@ -100,7 +101,7 @@ the `opts` argument of `NoisyVerticalGradient`.
 
 ## Live example ##
 
-This code was developed for the recent redesign of 
+This code was written for the recent redesign of 
 [Bvckup 2 homepage](https://bvckup2.com) which makes a good use 
 of very dark gradients that showed a fair amount of banding with 
 the plain `linear-gradient`.
