@@ -33,3 +33,7 @@ a bit of a texture.
 Or, again, with the exaggeration to show the details:
 
 ![#123-to-#234 smoothed exaggerated](gradient-smoothed-ex.png)
+
+And, finally, "raw" and "smoothed" versions side by side:
+
+![#123-to-#234 versus](gradient-raw-vs-smoothed.png)
