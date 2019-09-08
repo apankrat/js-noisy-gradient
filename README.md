@@ -40,9 +40,9 @@ And, finally, "raw" and "smoothed" versions side by side:
 
 ## The code ##
 
-[js-noisy-gradient.js](js-noisy-gradient.js) includes a function `NoisyVerticalGradient` 
-that accepts image dimensions, a set of gradient stops (\*) and some optional options,
-and produces an image filled with a smoothed gradient as per above.
+`NoisyVerticalGradient()` accepts image dimensions, a set of gradient 
+stops and optinal options, and produces an image filled with a 
+smoothed gradient as per above.
 
 Caveats:
 * Gradient stops are solid colors, specified in `#rrggbb` format.
@@ -51,7 +51,7 @@ Caveats:
 * The IE is not supported.
 
 Pixels from the raw gradient fill are lightened up or dimmed by overlaying
-either a pure white or pure black pixels with random alpha transparency.
+either pure white or pure black pixels with random alpha transparency.
 
 The usage:
 
@@ -65,8 +65,7 @@ of a target element.
 
 Options:
 
-* `cover` - from 0.0 to 1.0, determines the percentage of pixels
-that gets their color tweaked. The default is 1.0, i.e. "all pixels".
+* `cover` - the percentage of pixels that gets their color tweaked. The default is 1.0, which is "all pixels".
 * `black` - the maximum alpha of pure black pixels. The default is 0.03.
 * `white` - the maximum alpha of pure white pixels. The default is 0.015.
 
@@ -83,6 +82,10 @@ trick is how to do it **fast**.
 Here it's done with WebGL, which is probably one of more esoteric
 uses of this lovely framework.
 
+In fact, this is probably what makes the whole thing notable.
+If you ever wondered how to apply WebGL in a purely aesthetic
+capacity, this is *the* example of that.
+
 ### 2D canvas ###
 
 There's also a pure `2D canvas` version, but be advised that it
@@ -92,5 +95,15 @@ take seconds to run for an image that's not even a full screen.
 For that reason the fallback to the 2d_canvas rendering in case
 when WebGL is not available is OFF by default.
 
-You can switch it on by passing `canvas_fallback: true` in the 
-`opts` array, the last argument of `NoisyVerticalGradient`.
+You can switch it on by setting `canvas_fallback` to `true` in 
+the `opts` argument of `NoisyVerticalGradient`.
+
+## Live example ##
+
+This code was developed for the recent redesign of 
+[Bvckup 2 homepage](https://bvckup2.com) which makes a good use 
+of very dark gradients that showed a fair amount of banding with 
+the plain `linear-gradient`.
+
+Could've just photoshopped the noise on a background strip, but
+where's fun in that? :)

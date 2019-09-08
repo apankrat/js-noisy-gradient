@@ -1,0 +1,51 @@
+<<!doctype html>
+<html>
+
+<head>
+  <title>js-noisy-gradient demo</title>
+  <style>
+    <!--
+	body {
+		background: #111;
+	}
+
+	#wrap {
+		width: 801px;
+		height: 600px;
+		margin: 100px auto 0;
+	}
+
+	#wrap div {
+		width: 400px;
+		height: 600px;
+		background: linear-gradient(#112233, #223344);
+	}
+
+	#l {
+		float: left;
+	}
+
+	#r {
+		float: right;
+	}
+    -->
+  </style>
+</head>
+
+<body>
+	<div id=wrap>
+		<div id=l></div>
+		<div id=r></div>
+	</div>
+</body>
+
+<script src=js-noisy-gradient.js></script>
+<script>
+	var stops = [ '#112233', '#223344' ];
+	var opts = { };
+	var png = (new NoisyVerticalGradient(400, 600, stops, opts)).render_png();
+	var div = document.getElementById('r');
+	div.style.backgroundImage = png;
+</script>
+
+</html>
