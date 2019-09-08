@@ -28,4 +28,8 @@ By varying the amount of noise and the strength of lightening/darkening
 it is possible to _blend_ bands together, albeit at the expense of adding
 a bit of a texture.
 
-![#123-to-#234 smoothed](gradient-smooted.png)
+![#123-to-#234 smoothed](gradient-smoothed.png)
+
+Or, again, with the exaggeration to show the details:
+
+![#123-to-#234 smoothed exaggerated](gradient-smoothed-ex.png)
