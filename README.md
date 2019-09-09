@@ -46,21 +46,21 @@ smoothed gradient as per above.
 
 Caveats:
 * Gradient stops are solid colors, specified in `#rrggbb` format.
-* Gradient stops are assumed to spaced evenly.
+* Gradient stops are assumed to be spaced evenly.
 * The gradient is vertical, as per the function name.
 * The IE is not supported.
 
 Pixels from the raw gradient fill are lightened up or dimmed by overlaying
-either pure white or pure black pixels with random alpha transparency.
+either pure white or pure black pixels with a random alpha transparency.
 
 The usage:
 
-    var nvg = new NoisyVerticalGradient(50, 400, [ '#112233', '#223344'] );
+    var nvg = new NoisyVerticalGradient(50, 400, ['#112233', '#223344'] );
     var png = nvg.render_png();
     document.getElementById('xyz').style.backgroundImage = png;
 
 This can obviously be simplified with some code to automatically
-extract `width`, 'height` and `stops` arguments from the DOM/CSS
+extract `width`, `height` and `stops` arguments from the DOM/CSS
 of a target element.
 
 Options:
