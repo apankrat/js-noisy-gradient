@@ -85,7 +85,7 @@ trick is how to do it **fast**.
 Here it's done with WebGL, which is probably one of more esoteric
 uses of this lovely framework.
 
-In fact, this is probably what makes the whole thing notable.
+In fact, the WebGL use is what makes the whole thing notable.
 
 If you ever wondered how to apply WebGL in a purely *aesthetic*
 capacity, this is **the** example of that.
