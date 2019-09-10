@@ -1,31 +1,31 @@
 # js-noisy-gradient
+
 Small and very fast single-function "lib" for smoothing visible banding in linear-gradient backgrounds.
 
 ## Intro ##
 
-Gradient fills that use colors that are close to each other are prone
-to producing a visual artefact called [color banding](https://en.wikipedia.org/wiki/Colour_banding).
+Gradient fills that use very similar colors are prone to produce a visual artefact called [color banding](https://en.wikipedia.org/wiki/Colour_banding).
 
-For example, vertical `linear-gradient` from #112233 to #223344 looks like this:
+For example, a vertical `linear-gradient` from #112233 to #223344 looks like this:
 
 ![#123-to-#234](gradient-raw.png)
 
-Depending on your monitor and the lighting conditions the effect may be pronounced or just barely visible. 
+Depending on your monitor and the lighting conditions the effect may be more or less pronounced. 
 Here's the same image with luminosity levels adjusted to exaggerate the effect:
 
 ![#123-to-#234 exaggerated](gradient-raw-ex.png)
 
-Banding is certainly not an Earth-shattering issue, but when it's noticeable,
+Banding is certainly not an Earth-shattering issue, but when it's noticeable, 
 it tends to stick out and detract the attention from the rest of the design.
 
 ## Solution ##
 
 There is however a very simple solution. It works by adding a small amount
 of noise to the image, so that _some_ pixels become a little bit lighter
-and some - a little bit darker.
+and some a little bit darker.
 
 By varying the amount of noise and the strength of lightening/darkening
-it is possible to _blend_ bands together, albeit at the expense of adding
+it is possible to visually _blend_ bands together, albeit at the expense of adding
 a bit of a texture.
 
 ![#123-to-#234 smoothed](gradient-smoothed.png)
@@ -40,15 +40,16 @@ And, finally, "raw" and "smoothed" versions side by side:
 
 ## The code ##
 
-`NoisyVerticalGradient()` accepts image dimensions, a set of gradient 
-stops and optinal options, and produces an image filled with a 
+`NoisyVerticalGradient()` accepts an image dimensions, a set of gradient 
+stops, and the options arguments, and produces an image filled with a 
 smoothed gradient as per above.
 
 Caveats:
+
 * Gradient stops are solid colors, specified in `#rrggbb` format.
 * Gradient stops are assumed to be spaced evenly.
 * The gradient is vertical, as per the function name.
-* The IE is not supported.
+* IE is not supported.
 
 Pixels from the raw gradient fill are lightened up or dimmed by overlaying
 either pure white or pure black pixels with a random alpha transparency.
@@ -66,8 +67,8 @@ of a target element.
 Options:
 
 * `cover` - the percentage of pixels that gets their color tweaked. The default is 1.0, which is "all pixels".
-* `black` - the maximum alpha of pure black pixels. The default is 0.03.
-* `white` - the maximum alpha of pure white pixels. The default is 0.015.
+* `black` - the maximum alpha of pure **black** pixels. The default is 0.03.
+* `white` - the maximum alpha of pure **white** pixels. The default is 0.015.
 
 So something like this will introduce an overly strong black-only
 noise to about 30% of the image:
@@ -76,10 +77,10 @@ noise to about 30% of the image:
 
 ### WebGL ###
 
-Adding noise to an image is not really a rocket science, but the 
+Adding noise to an image is not really rocket science, but the 
 trick is how to do it **fast**.
 
-Here it's done with WebGL, which is probably one of more esoteric
+Here it's done with WebGL, which is probably one of the most esoteric
 uses of this lovely framework.
 
 In fact, this is probably what makes the whole thing notable.
@@ -94,7 +95,7 @@ can be *very* slow even on very fast machines. Literally, it will
 take seconds to run for an image that's not even a full screen.
 
 For that reason the fallback to the 2d_canvas rendering in case
-when WebGL is not available is OFF by default.
+when WebGL is not available is `OFF` by default.
 
 You can switch it on by setting `canvas_fallback` to `true` in 
 the `opts` argument of `NoisyVerticalGradient`.
