@@ -42,8 +42,8 @@ And, finally, "raw" and "smoothed" versions side by side:
 
 ## The code ##
 
-`NoisyVerticalGradient()` accepts an image dimensions, a set of gradient 
-stops, and optional configuration overrides, and produces an image filled 
+`NoisyVerticalGradient()` accepts image dimensions, a set of gradient 
+stops and optional configuration overrides, and produces an image filled 
 with a smoothed gradient as per above.
 
 Caveats:
