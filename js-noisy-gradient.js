@@ -1,15 +1,9 @@
 /*
- *	Copyright (c) 2019 Alex Pankratov, ap@swapped.ch.
- *	All rights reserved.
- *
+ *	Copyright (c) 2019 Alexander Pankratov, <ap@swapped.ch>
  *	https://github.com/apankrat/js-noisy-gradient
- */
-
-/*
- *	The program is distributed under terms of BSD license. 
- *	You can obtain the copy of the license by visiting:
  *
- *	http://www.opensource.org/licenses/bsd-license.php
+ *      Distributed under the terms of the 2-clause BSD license. 
+ *      https://www.opensource.org/licenses/bsd-license.php
  */
 
 function NoisyVerticalGradient(w, h, stops, opts)
